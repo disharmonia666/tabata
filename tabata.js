@@ -10,7 +10,7 @@
   // Function to speak text
   function speakText(text) {
     // Speak the text
-    say.speak(text, 'Shelley', 1.0, (err) => {
+    say.speak(text, 'Karen', 1.0, (err) => {
       if (err) {
         console.error(`Error: ${err.message}`);
         return;
@@ -65,7 +65,7 @@
   }
 
   async function runJointWarmUp() {
-    await tabata("Swing your arms forward", 10, 10);
+    await tabata("Swing your arms forward", 10, 5);
     await tabata("Swing your arms back", 10, 0);
     await tabata("Head tilts", 10, 0);
     await tabata("Head nods", 10, 0);
@@ -80,7 +80,7 @@
   }
 
   async function runMainWarmUp() {
-    await tabata("Jumping Jack", 45, 20);
+    await tabata("Jumping Jack", 45, 5);
     await tabata("Climbing", 35, 20);
     await tabata("Dynamic shoulder bridge", 35, 15);
     await tabata("Plank", 35, 15);
@@ -109,9 +109,30 @@
     await tabata("Deep relaxation", 45, 0);
   }
 
+  async function runOnlyBack() {
+    await tabata("Plank", 35, 10);
+    await tabata("Shrugs", 35, 20);
+    await tabata("Bug", 35, 20);
+    await tabata("Supermans", 35, 20);
+    await tabata("Dynamic shoulder bridge", 35, 15);
+    await tabata("Flags", 35, 20);
+    await tabata("Child pose", 30, 5);
+    await tabata("Cat cow", 30, 5);
+    await tabata("Standing forward fold", 30, 5);
+    await tabata("Yogi squat", 30, 5);
+    await tabata("Seated twist right", 30, 5);
+    await tabata("Seated twist left", 30, 5);
+    await tabata("Knee hug", 30, 5);
+    await tabata("Easy twist", 30, 5);
+    await tabata("Fullbody stretch", 30, 5);
+    await tabata("Lying twist right", 45, 5);
+    await tabata("Lying twist left", 45, 5);
+    await tabata("Deep relaxation", 45, 0);
+  }  
+
   async function runTest() {
-    await tabata("Child pose", 10, 5);
-    await tabata("Cat cow", 10, 0);
+    await tabata("Child pose", 5, 5);
+    await tabata("Cat cow", 5, 0);
   }
 
   async function selectWorkout() {
@@ -120,7 +141,7 @@
         type: 'list',
         name: 'workout',
         message: 'Which training do you want to do?',
-        choices: ['Joint Warm Up', 'Main Warm Up', 'Back Yoga', 'Test']
+        choices: ['Joint Warm Up', 'Main Warm Up', 'Back Yoga', 'Only Back', 'Test']
       }
     ]);
 
@@ -134,6 +155,9 @@
       case 'Back Yoga':
         await runBackYoga();
         break;
+      case 'Only Back':
+          await runOnlyBack();
+          break;        
       case 'Test':
           await runTest();
           break;
