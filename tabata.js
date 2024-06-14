@@ -81,9 +81,10 @@
 
   async function runMainWarmUp() {
     await tabata("Jumping Jack", 45, 5);
+    await tabata("Cat cow", 30, 20);
     await tabata("Climbing", 35, 20);
-    await tabata("Dynamic shoulder bridge", 35, 15);
-    await tabata("Plank", 35, 15);
+    await tabata("Dynamic shoulder bridge", 35, 20);
+    await tabata("Plank", 35, 20);
     await tabata("Lunges", 35, 20);
     await tabata("Bug", 35, 20);
     await tabata("Squats", 35, 20);
@@ -96,7 +97,6 @@
 
   async function runBackYoga() {
     await tabata("Child pose", 30, 10);
-    await tabata("Cat cow", 30, 5);
     await tabata("Standing forward fold", 30, 5);
     await tabata("Yogi squat", 30, 5);
     await tabata("Seated twist right", 30, 5);
