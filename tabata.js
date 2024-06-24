@@ -87,10 +87,12 @@
     await tabata("Plank", 35, 20);
     await tabata("Lunges", 35, 20);
     await tabata("Bug", 35, 20);
+    await tabata("Frogstand", 35, 20);
     await tabata("Squats", 35, 20);
     await tabata("Supermans", 35, 20);
     await tabata("Shrugs", 35, 20);
     await tabata("Flags", 35, 20);
+    await tabata("L-sit hold", 35, 20);
     await tabata("Situps", 35, 20);
     await tabata("Push-ups", 35, 20);
   }
