@@ -81,6 +81,7 @@
 
   async function runMainWarmUp() {
     await tabata("Jumping Jack", 45, 5);
+    await tabata("Hollow body hold", 45, 5);
     await tabata("Cat cow", 30, 20);
     await tabata("Climbing", 35, 20);
     await tabata("Dynamic shoulder bridge", 35, 20);
@@ -91,10 +92,9 @@
     await tabata("Squats", 35, 20);
     await tabata("Supermans", 35, 20);
     await tabata("Shrugs", 35, 20);
-    await tabata("Flags", 35, 20);
     await tabata("L-sit hold", 35, 20);
+    await tabata("Flags", 35, 20);
     await tabata("Situps", 35, 20);
-    await tabata("Push-ups", 35, 20);
   }
 
   async function runBackYoga() {
@@ -105,7 +105,8 @@
     await tabata("Seated twist right", 30, 5);
     await tabata("Seated twist left", 30, 5);
     await tabata("Knee hug", 30, 5);
-    await tabata("Easy twist", 30, 5);
+    await tabata("Easy twist right", 30, 5);
+    await tabata("Easy twist left", 30, 5);
     await tabata("Fullbody stretch", 30, 5);
     await tabata("Lying twist right", 45, 5);
     await tabata("Lying twist left", 45, 5);
@@ -127,12 +128,20 @@
     await tabata("Seated twist right", 30, 5);
     await tabata("Seated twist left", 30, 5);
     await tabata("Knee hug", 30, 5);
-    await tabata("Easy twist", 30, 5);
+    await tabata("Easy twist right", 30, 5);
+    await tabata("Easy twist left", 30, 5);
     await tabata("Fullbody stretch", 30, 5);
     await tabata("Lying twist right", 45, 5);
     await tabata("Lying twist left", 45, 5);
     await tabata("Deep relaxation", 45, 0);
   }  
+
+  async function runMainWorkout() {
+    await tabata("Pull-ups", 20, 5);
+    await tabata("Push-ups", 20, 20);
+    await tabata("Chin-ups", 20, 20);
+    await tabata("Dips", 20, 20);
+  }
 
   async function runTest() {
     await tabata("Child pose", 5, 5);
@@ -145,7 +154,7 @@
         type: 'list',
         name: 'workout',
         message: 'Which training do you want to do?',
-        choices: ['Joint Warm Up', 'Main Warm Up', 'Back Yoga', 'Only Back', 'Test']
+        choices: ['Joint Warm Up', 'Main Warm Up', 'Main workout', 'Back Yoga', 'Only Back', 'Test']
       }
     ]);
 
@@ -156,6 +165,9 @@
       case 'Main Warm Up':
         await runMainWarmUp();
         break;
+      case 'Main workout':
+          await runMainWorkout();
+          break;
       case 'Back Yoga':
         await runBackYoga();
         break;
@@ -170,6 +182,5 @@
     }
   }
 
-  
   selectWorkout();
 })();
