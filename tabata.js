@@ -138,9 +138,9 @@
 
   async function runMainWorkout() {
     await tabata("Pull-ups", 20, 5);
-    await tabata("Push-ups", 20, 20);
-    await tabata("Chin-ups", 20, 20);
-    await tabata("Dips", 20, 20);
+    await tabata("Push-ups", 20, 60);
+    await tabata("Chin-ups", 20, 60);
+    await tabata("Dips", 20, 60);
   }
 
   async function runTest() {
